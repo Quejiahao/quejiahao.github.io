@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon/titleIcon.png">
+  <link rel="icon" type="image/png" href="/img/icon/titleIcon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="author" content="Coumarin">
+  
+    <meta name="description" content="Coumarin">
+  
+  
+    <meta name="keywords" content="Fourier Analysis," />
+  
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <title>Fourier 级数和积分 ~ Coumarin</title>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.10.0/css/all.min.css"  >
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="https://cdn.staticfile.org/mdbootstrap/4.8.7/css/mdb.min.css"  >
+<link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/3.0.1/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+  <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css"  >
+
+
+  <link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"  >
+
+<link rel="stylesheet" href="/css/main.css"  >
+<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+  <style type="text/css">
+    .banner-bg {
+      
+      background-position: center;
+      background-repeat: repeat-y;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+  </style>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="banner-bg">
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Coumarin</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">首页</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">归档</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/categories/">分类</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">标签</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/links/">友链</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">关于</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2 rgba-black-slight" id="background">
+      <div class="full-bg-img">
+        <div class="mask flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+            
+              <br>
+              <p class="mt-3">
+                <i class="far fa-calendar-alt"></i>
+                <span class="post-date">2020/02/22&nbsp;|&nbsp;</span>
+                <i class="far fa-chart-bar"></i>
+                <span class="post-count">636</span>字&nbsp;|&nbsp;
+                <i class="far fa-clock"></i>
+                <span class="post-count">2</span>分钟
+                
+                  <span id="busuanzi_container_page_pv" style="display:none">
+                    &nbsp;|&nbsp;
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv"></span>次
+                  </span>
+                
+              </p>
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  <main id="mainContent" class="rgba-black-slight">
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <p><strong>以下为 <em>Fourier Analysis</em> (Javier Duoandikoetxea) 的翻译结合老师的笔记.</strong> 本人英文渣, 所以翻译得可能不怎么样.</p>
+<h1 id="Fourier-系数和级数"><a href="#Fourier-系数和级数" class="headerlink" title="Fourier 系数和级数"></a>Fourier 系数和级数</h1><p>当使用分离变量法解偏微分方程的时候会遇到将 $\R$ 上 (一个区间) 的函数表示为三角级数的问题<br>\begin{equation}\label{equ:realFour1}<br>f(x) = \displaystyle\sum_{k = 0}^\infty a_k \cos (kx) + b_k \sin (kx)<br>\end{equation}</p>
+<p>这是 J. Fourier 在《热的解析理论》 (1822, 第一次解决问题是 1807 年在法兰西学会) 中给出了解决偏微分方程的这个方法. 更早的时候, 在 18 世纪中叶, Daniel Bernoulli 在解决振动弦的问题时曾提到这个方法, Fourier 系数的公式出现在 1777 年 L. Euler 的一篇文章中.</p>
+<p>\eqref{equ:realFour1} 式的右边是一个 $2\pi$-周期函数, 所以 $f$ 也是 $2\pi$-周期函数. 因此我们考虑 $f$ 定义在一个 $2\pi$ 长度的区间上. 在 \eqref{equ:realFour1} 式中使用 Euler 恒等式 $\e^{\i kx} = \cos (kx) + \i \sin (kx)$, 我们可以用 $\lrb{\e^{\i kx}, k \in \Z}$ 来代替函数 $\sin (kx)$ 和 $\cos (kx)$, 从现在开始我们将这么做. 此外, 我将考虑 $1$-周期函数, 所以我们将修改函数系为 $\lrb{\e^{2\pi \i kx}, k \in \Z}$. 从而我们的问题变成了研究 $f$ 表示为<br>\begin{equation}\label{equ:imagFour1}<br>f(x) = \sum_{-\infty}^{\infty} c_k \e^{2\pi \i kx}.<br>\end{equation}</p>
+<p>我们假设这个级数一致收敛, \eqref{equ:imagFour1} 式两边乘上 $\e^{-2\pi \i mx}$ 并在 $(0, 1)$ 上逐项积分得到</p>
+\begin{equation*}
+c_m = \int_{0}^{1} f(x)\e^{-2\pi\i mx} \di x,\end{equation*}
+<p>这是因为有如下正交关系</p>
+\begin{equation*}
+\int_{0}^{1}\e^{2 \pi \i kx}\e^{-2 \pi \i mx} \di x = \left\{\begin{array}{ll}
+0,    &    k \neq m,\\
+1,    &    k = m.
+\end{array}\right.\end{equation*}
+<p>记 $\bT$ 为实数模掉 $1$ 后的加群 ($\R / \Z$), 即一维圆环面. 它也可以看成是单位圆 $\bbS^1$. 我们说一个函数定义在 $\bT$ 上等价于说它定义在 $\R$ 上且周期为 $1$. 对于满足 $f \in L^1(\bT )$ 的函数我们可以定义一个数列 $\lrb{\hat{f}(k)}$, 若满足</p>
+\begin{equation*}
+\hat{f}(k) = \int_{0}^{1} f(x)\e^{-2\pi \i kx} \di x,\end{equation*}
+<p>则称其为 Fourier 系数. 由这些系数构成的三角级数<br>\begin{equation}\label{equ:fourSeri}<br>\sum_{-\infty}^{\infty}\hat{f}(k)\e^{2\pi \i kx}<br>\end{equation}</p>
+<p>称为 $f$ 的 Fourier 级数.</p>
+<p>现在，我们的问题在于确定级数 \eqref{equ:fourSeri} 何时以及在何种意义上表示函数 $f$.</p>
+<!--设 $f$ 为 $\R$ 上 1-周期函数, 即
+$$f(x) = f(x + 1),\quad \forall x \in \R.$$
+问
+\begin{equation}\label{equ:realFour}f(x) = \displaystyle\sum_{k = 0}^\infty a_k \cos (2\pi kx) + b_k \sin (2\pi kx)\end{equation}
+在什么条件下成立? 由 \eqref{equ:realFour} 式及
+$$\e^{2 \pi \i kx} = \cos (2 \pi kx) + \i \sin (2 \pi kx)$$
+可得
+\begin{equation}\label{equ:imagFour}
+f(x) = \displaystyle\sum_{k = -\infty}^\infty c_k \e^{2 \pi \i kx},
+\end{equation}
+问 \eqref{equ:imagFour} 式在什么条件下?
+
+**Exercise 1** $\lrb{c_k}$ 与 $\lrb{a_k, b_k}$ 之间的关系是什么?
+
+=========================================================================
+
+## 为什么要研究这一问题或研究这一问题的有什么意义?
+
+Fourier 之所以研究这一问题是受到 (进行) 热传导研究的启发 (需要). 此处我们从 "信息" 的角度给一个动机:
+
+![alt 属性文本](/img/FA1.jpg "可选标题")
+
+方法之一: 把声音在不同频率的只记录下来, 即为 $c_k$.
+
+涉及以下两个问题.
+
+* $c_k = ?$
+
+* $\displaystyle\sum_{-\infty}^{\infty} c_k \e^{2\pi \i kx}$ 收敛性 / 速度? 是否收敛到 $f$.
+
+假设 $f$ 很好, 且假设级数一致收敛到 $f$, 那么
+$$c_k = \int_{0}^{1} f(x) \e^{-2 \pi \i kx} \di x$$
+
+***Proof*** 由
+$$c_k = \int_{0}^{1} f(x)\e^{-2 \pi \i kx} \di x = \sum_{-\infty}^{\infty} c_l \int_0^1 \e^{2 \pi \i lx}\e^{-2 \pi \i kx}\di x$$
+而
+
+
+
+一般地, 设 $f \in L^1(\mathbb{T})$ ($f$ 周期为 1 且 $f$ 在 $[0, 1]$ 上可积, Lebesgue 意义下 $\displaystyle\int_0^1 |f| \di x < \infty$). 定义 $f$ 的 Fourier 系数为
+$$\hat{f}(k) = \int_{0}^{1}f(x)\e^{-2\pi\i kx}\di x \forall k \in \Z \left(\hat{f}(k) \leq \lrvv{f}_{L^1(\mathbb{T})} = \int_{0}^{1}\lrv{f} \di x \right),$$
+$f$ 对应的 Fourier 级数为
+$$\sum_{-\infty}^{\infty} \hat{f}(k)\e^{2 \pi \i kx}.$$
+在 $f \in L^1(\mathbb{T})$ 的假设下, 我们将研究 $f$ 的 Fourier 级数的收敛性.
+
+# Riemann-Lebesgue Lemma
+
+设 $f \in L^1(\mathbb{T})$, 则 $\hat{f}(k) \to 0$, $\lrv{k} \to \infty$.
+
+***Proof***
+
+若 $f$ 连续, 那么
+$$\lim_{\lrv{k} \to \infty} \hat{f}(k) \xle{Lebesgue 控制收敛定理} = \frac{1}{2} \lim_{\lrv{k} \to \infty}\left( \right)$$
+
+若 $f \in L^1^(\bT)$, 知对任意 $\ep > 0$, 存在连续函数使得
+$$$$
+
+# 逐点收敛准则
+
+***Theorem*** (Jordan 准则) 假定 $x \in [0, 1)$
+
+***Exercise 2*** 设 $f \in \BV [a, b]$, 证明 $f$ 有界, 且对于任意 $x \in [a, b)$, $f(x+) := \lim_{y \to x+} f(y)$ 存在, 对于任意 $x \in (a, b]$, $f(x-) := \lim_{y \to x-} f(y)$ 存在.
+
+***Exercise 3***
+
+为证明上述三个准则-->
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <div id="post-tag">
+              
+                <span>
+                  <i class="iconfont icon-inbox"></i>
+                  
+                    <a class="hover-with-bg" href="/categories/Fourier%20Analysis">Fourier Analysis</a>
+                    &nbsp;
+                  
+                </span>
+              
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/Fourier%20Analysis">Fourier Analysis</a>
+                
+              </span>
+            </div>
+            
+              <div id="post-note">
+                <div><strong>本文作者：</strong><a href="/">Coumarin</a></div>
+                <div><strong>本文链接：</strong><a href="https://kumarino.com/2020/02/FourierAnalysis1/">https://kumarino.com/2020/02/FourierAnalysis1/</a></div>
+                <div><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow noopener noopener">CC BY-NC-SA 4.0 协议</a> 。转载请注明出处！</div>
+              </div>
+            
+            
+              <div id="post-nav" class="container">
+                  <div class="row">
+                    
+                      <a href="/2020/02/OptimizationTheory1/" id="post-nav-prev" class="col">
+                        <i class="fas fa-arrow-left"></i>
+                        <span class="post-nav-title">最优化问题</span>
+                      </a>
+                    
+                    
+                  </div>
+                </div>
+            
+          </div>
+        </div>
+
+        <!-- custom -->
+        
+          <div class="col-lg-7 mx-auto nopadding-md">
+            <div class="container custom post-content mx-auto">
+              <script> function setRewardWeChatPayURLQRCode() { document.getElementById("RewardURL").href = "wxp://f2f08LLmDyd3NUqRxtRO04K4IgirvP-KZNnP"; document.getElementById("RewardQRCode").src = "/img/RewardQRCode/WeChatReward.png"; }
+function setRewardAlipayURLQRCode() { document.getElementById("RewardURL").href = "https://qr.alipay.com/FKX079043IEA1AEHJFJM84"; document.getElementById("RewardQRCode").src = "/img/RewardQRCode/Alipay.png"; }
+function setRewardUnionPayURLQRCode() { document.getElementById("RewardURL").href = "https://qr.95516.com/00010002/01013347587199092167314704838465"; document.getElementById("RewardQRCode").src = "/img/RewardQRCode/UnionPay.png"; } </script> <div style="text-align:center"> <a href="wxp://f2f08LLmDyd3NUqRxtRO04K4IgirvP-KZNnP" id="RewardURL"><img src="/img/RewardQRCode/WeChatReward.png" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;" id="RewardQRCode"></a> <input type="radio" id="WeChatPay" name="RewardWay" checked="checked" onclick="setRewardWeChatPayURLQRCode()"> <label for="WeChatPay">微　信</label> <input type="radio" id="Alipay" name="RewardWay" onclick="setRewardAlipayURLQRCode()"> <label for="Alipay">支付宝</label> <input type="radio" id="UnionPay" name="RewardWay" onclick="setRewardUnionPayURLQRCode()"> <label for="UnionPay">云闪付</label> </div>
+            </div>
+          </div>
+        
+
+        <!-- Comments -->
+        <div class="col-lg-10 mx-auto nopadding-md">
+          <div class="container comments mx-auto" id="comments">
+            
+             <br><br>
+              
+              
+  <div id="vcomments" style="margin: 0 auto;"></div>
+  <script defer src="//cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+  <script>
+    var notify = 'true' == true ? true : false;
+    var verify = 'true' == true ? true : false;
+    var oldLoad = window.onload;
+    window.onload = function () {
+      new Valine({
+        el: '#vcomments',
+        app_id: "OkTuhtad3vyUmb84xrHDVKBS-gzGzoHsz",
+        app_key: "YWTYjgIFkWu5cKAb0v2lyqig",
+        placeholder: "说点什么",
+        avatar: "retro",
+        meta: ['nick', 'mail', 'link'],
+        pageSize: "10"
+      });
+      oldLoad && oldLoad();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+            
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+    <div id="tocbot"></div>
+  </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+    
+  </main>
+  
+<div id="sidebar" class="sidebar-hide">
+  <span class="sidebar-button sidebar-button-shift" id="toggle-sidebar" >
+    <i class="fa fa-arrow-right on" aria-hidden="true"></i>
+  </span>
+  <div class="sidebar-overlay"></div>
+  <div class="sidebar-intrude">
+    <div class="sidebar-avatar">
+      <img src="/img/icon/Icon.png" srcset="/img/icon/Icon.png" alt="avatar"/>
+    </div>
+    <div class="text-center sidebar-about">
+      <p class="h3 sidebar-author">Coumarin</p>
+      <p class="sidebar-subtitle">Coumarin</p>
+      
+        <a href="https://github.com/Quejiahao" class="h4" target="_blank">
+          <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+        &nbsp;&nbsp;
+      
+        <a href="mailto:i@kumarino.com" class="h4" target="_blank">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+        </a>
+        &nbsp;&nbsp;
+      
+    </div>
+    <div class="sidebar-friend">
+      <p class="h6 sidebar-friend-title">
+        <span class="sidebar-label-left"><i class="fas fa-user-friends"></i></span>
+        <span class="sidebar-label">友情链接</span>
+      </p>
+      <ul class="list-group">
+        
+          <a href="https://nicebowl.moe/" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              NiceBowl
+            </li>
+          </a>
+        
+    </ul>
+    </div>
+  </div>
+</div>
+
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <div id="footerContent"  class="rgba-black-slight">
+<footer class="pt-5">
+  <div class="text-center py-3">
+    <div class="footer-theme">
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener noreferrer">Hexo</a> theme <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener noreferrer">Fluid</a> mod by <a href="https://github.com/qixa/hexo-theme-fluid-mod" target="_blank" rel="nofollow noopener noreferrer">Julydate</a>
+    </div>
+
+    
+      <div class="footer-copyright">
+        
+          ©2020&nbsp;Coumarin
+        
+        
+          
+            <i class="iconfont icon-love"></i>
+          
+          <span>萌萌哒 <span id="runtime"></span> 天啦</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+      <!-- 一言 -->
+      <div class="footer-hitokoto">
+        <a id="hitokotoa" href="#" target="_blank" rel="nofollow noopener noreferrer">
+          <span id="hitokoto"></span>
+        </a>
+      </div>
+    
+    
+  </div>
+</footer>
+</div>
+<!-- SCRIPTS -->
+<script src="/lib/popper/popper.min.js" ></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+<script src="https://cdn.staticfile.org/mdbootstrap/4.8.7/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+  <script src="/js/lazyload.js" ></script>
+
+
+  
+    <script src="https://cdn.staticfile.org/tocbot/4.8.1/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
+<!-- Plugins -->
+
+  <script src="/lib/prettify/prettify.min.js" ></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+  <script src="https://cdn.staticfile.org/typed.js/2.0.9/typed.min.js" ></script>
+  <script type="text/javascript">
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "Fourier 级数和积分&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+  <script src="https://cdn.staticfile.org/anchor-js/4.2.0/anchor.min.js" ></script>
+  <script type="text/javascript">
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+  <script src="/js/local-search.js" ></script>
+  <script type="text/javascript">
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+  <script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <script type="text/javascript">
+  /* Fancybox */
+  var setupFancybox = function () {
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(function() {
+    var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      $(this).wrap(element);
+    });
+  };
+  setupFancybox();
+  </script>
+
+
+
+
+<script>
+	MathJax = {
+		options: {
+			renderActions: {
+				addMenu: [0, '', ''],
+			},
+		},
+		tex: {
+			inlineMath: [
+				["$", "$"]
+			],
+			displayMath: [
+				["$$", "$$"],
+				["\\[", "\\]"]
+			],
+			processEscapes: true,	// use \$ to produce a literal dollar sign
+			processEnvironments: true,	// process \begin{xxx}...\end{xxx} outside math mode
+			processRefs: true,	// process \ref{...} outside of math mode
+			digits: /^(?:[0-9]+(?:\{,\}[0-9]{3})*(?:\.[0-9]*)?|\.[0-9]+)/,
+			// pattern for recognizing numbers
+			tags: "ams",	// or 'none' or 'all'
+			tagSide: "right",	// side for \tag macros
+			tagIndent: "0em",	// amount to indent tags
+			useLabelIds: true,	// use label name rather than tag for ids
+			multlineWidth: "85%",	// width of multline environment
+			maxMacros: 10000,	// maximum number of macro substitutions per expression
+			maxBuffer: 5 * 1024,	// maximum size for the internal TeX string (5K)
+			baseURL:	// URL for use with links to tags (when there is a <base> tag in effect)
+				(document.getElementsByTagName('base').length === 0) ?
+					'' : String(document.location).replace(/#.*$/, ''),
+			macros: {
+				llt: "{\\left\\langle}",
+				rgt: "{\\right\\rangle}",
+				lc: "{\\left(}",
+				rc: "{\\right)}",
+				sep: "{\\textrm{-}}",	// 数学环境内使用 -, 而不是减号
+				one: "{\\mathbbm{1}}",
+				a: "{\\alpha}",
+				A: "{~\\mathrm{A}}",
+				AC: "{\\mathrm{AC}}",
+				al: "{\\bm\\alpha}",
+				ba: "{\\beta}",
+				bA: "{\\bm A}",
+				bbH: "{\\mathbb{H}}",
+				bbS: "{\\mathbb{S}}",
+				be: "{\\bm\\beta}",
+				bh: "{\\bm h}",
+				bs: ["{\\raisebox{.2em}{$#1$}\\left/\\raisebox{-.2em}{$#2$}\\right.}", 2],	// 斜线除号
+				bm: ["{\\boldsymbol{#1}}", 1],
+				bT: "{\\mathbb{T}}",
+				bU: "{\\bm U}",
+				BV: "{\\mathrm{BV}}",
+				bx: "{\\bm x}",
+				C: "{\\mathbb{C}}",	// 复数 C
+				mca: "{\\mathcal}",
+				cis: "{\\displaystyle\\bigcap_{k = 1}^\\infty}",
+				cov: "{\\mathbf{Cov}}",
+				csum: "{\\displaystyle\\sum_{k = 1}^\\infty}",
+				cT: "{\\mathcal{T}}",
+				cu: "{\\displaystyle\\bigcup_{k = 1}^\\infty}",
+				curl: "{\\mathbf{curl}}",
+				ch: "{\\mathrm{ch}~}",	// 双曲余弦
+				diam: "{\\mathrm{diam}~}",
+				de: "{\\delta}",
+				dba: "{\\displaystyle\\bigcap}",	// 集合交
+				dbigcap: "{\\displaystyle\\bigcap}",	// 集合交
+				dbigcup: "{\\displaystyle\\bigcup}",	// 集合并
+				dbu: "{\\displaystyle\\bigcup}",	// 集合并
+				di: "{\\mathrm{d}}",	// 微分算符 d
+				diff: "{\\mathrm{d}}",	// 微分算符 d
+				dinf: "{\\displaystyle\\inf}",
+				divr: "{\\mathbf{div}}",
+				diag: "{\\mathrm{diag}}",	// 对角矩阵 diag
+				dint: "{\\displaystyle\\int}",
+				dlim: "{\\displaystyle\\lim}",
+				dmax: "{\\displaystyle\\max}",
+				dmin: "{\\displaystyle\\min}",
+				dsum: "{\\displaystyle\\sum}",	// 求和号
+				dsup: "{\\displaystyle\\sup}",
+				dmmm: "{~\\mathrm{dm^3}}",
+				D: "{\\Delta}",
+				Di: "{\\mathrm{D}}",	// 微分算符 D
+				e: "{\\mathrm{e}}",	// 自然对数的底数
+				E: "{\\mathbb{E}}",	// \R 上赋予了欧氏拓扑
+				et: "{\\bm\\eta}",
+				ep: "{\\varepsilon}",
+				fb: "{\\bm f}",
+				g: "{~\\mathrm{g}}",
+				ga: "{\\bm\\gamma}",
+				geq: "{\\geqslant}",	// 大于或等于号, 下面一划是斜的
+				grad: "{\\mathbf{grad}}",
+				h: "~\\mathrm{h}}",
+				heq: "{\\mathbin{\\widehat{=}}}",
+				hin: "{\\mathbin{\\widehat{\\in}}}",
+				H: "{\\mathrm{H}}",	// 共轭转置 H
+				i: "{\\mathrm{i}}",	// 虚数单位 i
+				id: "{\\mathrm{id}}",
+				im: "{\\mathrm{Im}~}",
+				I: "{\\bm{I}}",		// 单位矩阵 I
+				Int: "{\\mathrm{Int}}",	// 内部
+				J: "{~\\mathrm{J}}",
+				JK: "{~\\mathrm{J}~\\cdot ~\\mathrm{K}^{-1}}",
+				kJ: "{~\\mathrm{kJ}}",
+				K: "{~\\mathrm{K}}",
+				Ker: "{\\mathrm{Ker}}",
+				ls: "{\\left[}",
+				lb: "{\\left\\{}",
+				ld: "{\\left.}",
+				lllcdots: "{$\\cdots\\cdots\\cdots\\cdots\\cdots\\cdots\\cdots\\cdots\\cdots\\cdots\\cdots\\cdots\\cdots\\cdots\\cdots\\cdots\\cdots\\cdots\\cdots\\cdots$}",
+				lrb: ["{\\left\\{ #1 \\right\\}}", 1],
+				lrv: ["{\\left| #1 \\right|}", 1],
+				lrvv: ["{\\left\\| #1 \\right\\|}", 1],
+				lv: "{\\left|}",
+				leq: "{\\leqslant}",	// 小于或等于号, 下面一划是斜的
+				mf: ["{\\marginpar{\\footnotesize #1}}", 1],
+				m: "{\\mathrm{m}}",
+				mol: "{~\\mathrm{mol}}",
+				mr: "{\\mathring}",
+				ms: ["{\\marginpar{\\scriptsize #1}}", 1],
+				N: "{\\mathbb{N}}",	// 自然数集 N
+				om: "{\\omega}",
+				oR: "{\\overline{\\mathbb{R}}}",
+				ol: "{\\overline}",
+				p: "{\\varphi}",
+				proj: "{\\mathrm{proj}~}",	// 向量的投影 proj
+				pa: "{\\partial}",
+				Pa: "{~\\mathrm{Pa}}",
+				pl: "{\\mathbin{/\\mskip-2.5mu/}}",
+				Q: "{\\mathbb{Q}}",	// 有理数 Q
+				rs: "{\\right]}",
+				rb: "{\\right\\}}",
+				rd: "{\\right.}",
+				rv: "{\\right|}",
+				rank: "{\\mathrm{rank}~}",	// 矩阵的秩 rank
+				R: "{\\mathbb{R}}",	// 实数域 R
+				rel: "{\\mathrm{rel}}",
+				Rie: "{\\mathcal{R}}",	// 黎曼可积 R
+				RP: "{\\mathbb{RP}}",	// 实数域 R
+				RR: "{\\mathrm{R}}",
+				s: "{~\\mathrm{s}}",
+				scr: "{\\mathscr}",
+				sg: "{\\sigma}",
+				sgn: "{\\mathrm{sgn}}",	// 符号函数
+				sh: "{\\mathrm{sh}}",	// 双曲正弦
+				sn: "{\\mathrm{span}}",
+				st: "{~\\textrm{s.t.}~}",
+				sx: "{\\mathscr{X}}",
+				supp: "{\\mathrm{supp}}",
+				T: "{\\mathrm{T}}",	// 转置 T
+				te: "{\\theta}",
+				tr: "{\\mathrm{tr}~}",	// 矩阵的迹 tr
+				tah: "{\\mathrm{th}~}",	// 双曲正切
+				U: "{\\mathring{U}}",	// 去心邻域 U 上面有一圈
+				V: "{~\\mathrm{V}}",
+				wh: ["{\\widehat{ #1}}", 1],
+				wt: "{\\widetilde}",
+				xra: "{\\xrightarrow}",
+				xle: "{\\xlongequal}",
+				xLra: "{\\xLongrightarrow}",
+				Z: "{\\mathbb{Z}}",	// 整数 Z
+			},
+			/*require: {
+				allow: {
+					base: false,
+					'all-packages': false
+				},
+				defaultAllow: true,
+			},*/
+			/*tagFormat: {
+				number: (n) => n.toString(),
+				tag: (tag) => '(' + tag + ')',
+				id: (id) => 'mjx-eqn-' + id.replace(/\s/g, '_'),
+				url: (id, base) => base + '#' + encodeURIComponent(id),
+			},*/
+			/*color: {
+				padding: '5px',
+				borderWidth: '2px'
+			},*/
+			/*amsCd: {
+				colspace: '5pt',
+				rowspace: '5pt',
+				harrowsize: '2.75em',
+				varrowsize: '1.75em',
+				hideHorizontalLabels: false
+			},*/
+		},
+		chtml: {
+			scale: 1,	// global scaling factor for all expressions
+			minScale: .5,	// smallest scaling factor to use
+			matchFontHeight: true,	// true to match ex-height of surrounding font
+			mtextInheritFont: true,	// true to make mtext elements use surrounding font
+			merrorInheritFont: true,	// true to make merror text use surrounding font
+			mathmlSpacing: false,	// true for MathML spacing rules, false for TeX rules
+			skipAttributes: {},	// RFDa and other attributes NOT to copy to the output
+			exFactor: .5,	// default size of ex in em units
+			displayAlign: "center",	// default for indentalign when set to 'auto'
+			displayIndent: "0",	// default for indentshift when set to 'auto'
+			// fontURL: 'https://cdn.staticfile.org/mathjax/3.0.5/es5/output/chtml/fonts/woff-v2',	// The URL where the fonts are found
+			adaptiveCSS: true	// true means only produce CSS that is used in the processed equations
+		},
+		svg: {
+			scale: 1,
+			minScale: .5,
+			matchFontHeight: true,
+			mtextInheritFont: true,
+			merrorInheritFont: true,
+			mathmlSpacing: false,
+			skipAttributes: {},
+			exFactor: .5,
+			displayAlign: 'center',
+			displayIndent: '0',
+			fontCache: 'local',	// or 'global' or 'none'
+			localID: null,	// ID to use for local font cache (for single equation processing)
+			internalSpeechTitles: true,	// insert <title> tags with speech content
+			titleID: 0	// initial id number to use for aria-labeledby titles
+		},
+	};
+</script>
+<script src="https://cdn.staticfile.org/mathjax/3.0.5/es5/tex-chtml.js" ></script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.10/SmoothScroll.min.js" ></script>
+  <style type="text/css">
+    html, body{
+      scroll-behavior: smooth;
+    }
+    @media screen and (prefers-reduced-motion: reduce){
+      html, body{
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+
+
+
+  <!-- 随机背景 -->
+  <script src="https://cdn.staticfile.org/danielgindi-jquery-backstretch/2.1.15/jquery.backstretch.min.js" ></script>
+  
+  
+    <!-- 本地随机背景 -->
+    <script type="text/javascript">
+      !function(){
+        var random_bg_string = "https://img.xjh.me/desktop/bg/acg/64082849_p0.jpg,https://img.xjh.me/desktop/bg/acg/63946708_p0.jpg,https://img.xjh.me/desktop/bg/acg/59756207_p0.jpg,https://img.xjh.me/desktop/bg/acg/63374320_p0.jpg,https://img.xjh.me/desktop/bg/nature/59190594_p0.jpg,https://img.xjh.me/desktop/bg/acg/63093148_p0.jpg,https://img.xjh.me/desktop/bg/acg/62494753_p0.jpg,https://img.xjh.me/desktop/bg/acg/61749296_p0.jpg,";
+        /* 去除图片链接组末尾逗号并转换为数组 */
+        random_bg_string = random_bg_string.substring(0,random_bg_string.length-1);
+        var random_bg_array = random_bg_string.split(",");
+        /* 首张图片随机 */
+        var n = Math.floor(Math.random() * random_bg_array.length);
+        $(".banner-bg").backstretch(
+          random_bg_array,
+          {
+            duration: 20 * 1000,
+            fade: 2 * 1000,
+            start: n,
+            animateFirst: false
+          }
+        );
+      }();
+    </script>
+  
+
+
+  <script type="text/javascript">
+  /*一言API*/
+  $(document).ready(function(){
+    getHitokoto();
+  });
+  function hitokoto(e) {
+    $("#hitokoto").stop().fadeOut(function() {
+      $("#hitokoto").html(e.hitokoto);
+      var element = document.getElementById('hitokotoa');
+      element.href = "https://hitokoto.cn/?uuid=" + e.uuid;
+      $("#hitokoto").stop().fadeIn()
+    })
+  };
+  function getHitokoto() {
+    var e = ["a", "b", "c", "d", "e", "i"];
+    fetch('https://v1.hitokoto.cn/?encode=json&charset=utf-8&c=' + e[Math.floor(Math.random() * e.length)],{
+      cache: 'no-cache',
+      method: 'GET',
+      mode: 'cors'
+    }).then(
+      response => response.json()
+    ).then(
+      data => {
+        hitokoto(data)
+        setTimeout(getHitokoto, 1e4)
+      }
+    ).catch(
+      console.error
+    )
+  };
+  </script>
+
+
+  <script async src="//cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" ></script>
+  
+
+
+  
+  
+    <script type="text/javascript">
+      //定义获取词语下标
+      var a_idx = 0;
+      jQuery(document).ready(function ($) {
+        //点击body时触发事件
+        $("body").click(function (e) {
+          //需要显示的词语
+          var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+          //设置词语给span标签
+          var $i = $("<span/>").text(a[a_idx]);
+          //下标等于原来下标+1  余 词语总数
+          a_idx = (a_idx + 1) % a.length;
+          //获取鼠标指针的位置，分别相对于文档的左和右边缘。
+          //获取x和y的指针坐标
+          var x = e.pageX, y = e.pageY;
+          //在鼠标的指针的位置给$i定义的span标签添加css样式
+          $i.css({
+            "z-index": 999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": rand_color()
+          });
+          // 随机颜色
+          function rand_color() {
+            return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+          }
+          //在body添加这个标签
+          $("body").append($i);
+          //animate() 方法执行 CSS 属性集的自定义动画。
+          //该方法通过CSS样式将元素从一个状态改变为另一个状态。CSS属性值是逐渐改变的，这样就可以创建动画效果。
+          //详情请看http://www.w3school.com.cn/jquery/effect_animate.asp
+          $i.animate({
+            //将原来的位置向上移动180
+            "top": y - 180,
+            "opacity": 0
+            //1500动画的速度
+          }, 1500, function () {
+            //时间到了自动删除
+            $i.remove();
+          });
+        });
+      })
+      ;
+    </script>
+  
+
+
+<!-- Functions -->
+<script type="text/javascript">
+  /* 切换背景 */
+  
+  $("#background").removeClass("banner-bg");
+  $("body").addClass("banner-bg");
+  var postToTopHight = $("#board").offset().top;
+  $(window).scroll(function () {
+    var bgDisplay = false;
+    var scrollHeight = document.body.scrollTop + document.documentElement.scrollTop;
+    bgDisplay = scrollHeight >= postToTopHight;
+    if(bgDisplay) {
+      $('#background').removeClass("rgba-black-slight");
+      $('#mainContent').removeClass("rgba-black-slight");
+      $('#footerContent').removeClass("rgba-black-slight");
+    } else {
+      $('#background').addClass("rgba-black-slight");
+      $('#mainContent').addClass("rgba-black-slight");
+      $('#footerContent').addClass("rgba-black-slight");
+    }
+  });
+  
+</script>
+
+  <script type="text/javascript">
+    /*显示博客运行时间*/
+    var blogRunTime = function () {
+      var runTime = document.getElementById("runtime");
+      var runtimeDate = "2020,02,20";
+	    var createDate = new Date(runtimeDate);
+	    var nowDate = new Date();
+	    var dateLine = nowDate.getTime() - createDate.getTime();
+	    var runDate = Math.floor(dateLine / (1000 * 60 * 60 * 24));
+	    runTime.innerHTML = runDate;
+    };
+    $(document).ready(function(){
+	    blogRunTime();
+    });
+  </script>
+
+
+  <script type="text/javascript">
+    /*窗口监视*/
+    var originalTitle = document.title;
+    window.onblur = function(){document.title = "你不爱我了 QAQ"};
+    window.onfocus = function(){document.title = originalTitle};
+  </script>
+
+
+  <script type="text/javascript">
+    /* 雪花效果 */
+    console.log('雪花效果 code by kvv.me');
+    ~function () {
+      function t() {
+          e.width = window.innerWidth,
+          e.height = window.innerHeight,
+          o = Math.round(window.innerWidth * window.innerHeight / 1e4)
+      }
+      function n() {
+          var t = window.innerWidth
+            , d = window.innerHeight
+            , c = e.getContext("2d");
+          c.clearRect(0, 0, t, d),
+          c.fillStyle = "rgba(255, 255, 255, 0.7)",
+          c.beginPath(),
+          a += .01;
+          for (var u = 0; o > u; u++) {
+            var l = r[u];
+            if (!l) {
+              continue
+            }
+            ;c.moveTo(l.x, l.y),
+            c.arc(l.x, l.y, l.radius, 0, 2 * Math.PI, !0),
+            l.y += Math.cos(a) + l.radius / 2,
+            l.x += Math.sin(a * l.direction),
+            (l.x > t + 5 || -5 > l.x || l.y > d) && (u % 3 > 0 ? (r[u].x = Math.random() * t,
+            r[u].y = -10) : Math.sin(a * l.direction) > 0 ? (r[u].x = -5,
+            r[u].y = Math.random() * d) : (r[u].x = t + 5,
+            r[u].y = Math.random() * d))
+          }
+          c.fill(),
+          i(n)
+      }
+      var e = document.createElement("canvas")
+        , i = requestAnimationFrame || msRequestAnimationFrame || function(t) {
+          setTimeout(t, 16)
+        }
+      , a = 0
+      , o = 0
+      , r = [];
+      t(),
+      e.className = "snow",
+      document.body.appendChild(e);
+      for (var d = 0; o > d; d++)
+        r.push({
+            x: Math.random() * window.innerWidth,
+            y: Math.random() * window.innerHeight,
+            radius: 4 * Math.random() + 1,
+            direction: 2 * Math.random() - .5
+        });
+      addEventListener("resize", t),
+      i(n)
+    }();
+  </script>
+
+
+ 
+ 
+
+<!-- 腾讯统计 -->
+<script>
+  var _mtac = {};
+  (function() {
+    var mta = document.createElement("script");
+    mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+    mta.setAttribute("name", "MTAH5");
+    mta.setAttribute("sid", "500711567");
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(mta, s);
+  })();
+</script>
+ 
+ 
+ 
+ 
+
+  
+</body>
+</html>

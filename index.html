@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icon/titleIcon.png">
+  <link rel="icon" type="image/png" href="/img/icon/titleIcon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="author" content="Coumarin">
+  
+    <meta name="description" content="Coumarin">
+  
+  
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <title>Coumarin</title>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.10.0/css/all.min.css"  >
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="https://cdn.staticfile.org/mdbootstrap/4.8.7/css/mdb.min.css"  >
+<link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/3.0.1/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+  <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css"  >
+
+
+  <link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"  >
+
+<link rel="stylesheet" href="/css/main.css"  >
+<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+  <style type="text/css">
+    .banner-bg {
+      
+      background-position: center;
+      background-repeat: repeat-y;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+  </style>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="banner-bg">
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Coumarin</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">首页</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">归档</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/categories/">分类</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">标签</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/links/">友链</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">关于</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
+
+    <div class="view intro-2 rgba-black-slight" id="background">
+      <div class="full-bg-img">
+        <div class="mask flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+            
+          </div>
+          
+            <div class="scroll-down-bar">
+              <i class="fa fa-angle-down scroll-down-arrow"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  <main id="mainContent" class="rgba-black-slight">
+    
+      <div class="container nopadding-md" style="padding-top:0.5rem;padding-bottom:0.5rem;">
+        <div class="py-5 z-depth-3" id="board">
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-12 m-auto">
+    
+      <a href="/2020/08/532moive1/" target="_self">
+        <p class="h4 index-header">在师大校外访问 532movie (一)</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">主要思想是在校内找台机器挂代理, 然后连上这个代理.
+准备工具
+Pulse Secure, 安装及配置参考学校给的教程
+VMware Horizon Client, 下载地址, 马秀麟老师的说明
+CCProxy, 免费版就行, 先不用安装, 官网
+Proxifier, 注册码自行 Google, 百度, 官网
+
+搭建代理
+用 Pulse Secure 连上师大的 VPN.
+打开 VMware Horizon Client, 第一次操作的时候先添加服务器, 服务器地址为 172.22.92.13. 点 “连接” 后会出现凭据不安全的警告, 直接点 “继续”.
+用户名和密码都是学号, 高年级的同学如果登不上可以试试低年级的号, 如果都不行说明这段时间用不了教学云桌面, 暂时放弃, 过段时间再说.
+随便选一个进去.
+进去可能是全屏, 鼠标触下屏幕上边点下 “向下还原” 按钮.
+选项 -&gt; 共享文件夹, 添加 CCProxy 安装程序所在的文件夹.现在在教学云桌面里面应该能找到你共享的文件夹.
+在教学云桌面以管理员身份运行 CCProxy 安装程序, 无脑点击 “下一步”. 安装完成后会</div>
+        </div>
+      </a>
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020/08/25&nbsp;&nbsp;
+        
+        
+        <i class="far fa-chart-bar"></i>&nbsp;586字&nbsp;&nbsp;
+        <i class="far fa-clock"></i>&nbsp;2分钟&nbsp;&nbsp;
+        
+        
+          <i class="iconfont icon-inbox"></i>
+          
+            <a href="/categories/Beijing%20Normal%20University">Beijing Normal University</a>&nbsp;
+          &nbsp;
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/Beijing%20Normal%20University">Beijing Normal University</a>&nbsp;
+          
+            <a href="/tags/532movie">532movie</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-12 m-auto">
+    
+      <a href="/2020/03/OptimizationTheory2/" target="_self">
+        <p class="h4 index-header">一维最优化问题</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">本文基本上是老师的讲义, 少部分为自己理解或修改.
+首先回忆最优化问题的形式.
+\begin{equation*}
+\min_{x \in \R^n} f(x),\quad \st x \in X.\end{equation*}
+考虑最简单的情况: $n = 1$, 此时考虑的函数为 $f : \R \to \R$, $X$ 可以是 $(-\infty, a]$, $[a, b]$, $[b, +\infty)$, 也可以是这些区间的并集. 为方便起见, 先考虑无约束的一维最优化问题:\begin{equation}\label{equ:notResOneOpt}\min_{x \in \R} f(x).\end{equation}
+
+它是高维优化问题的基础.
+一般只考虑非线性的 $f$, 线性的情况是平凡的.
+假设 $f \in C^1$, 若 $x^* \in \R$ 是问题 \eqref{equ:notResOneOpt} 的解, 则有 $f’(x^*) = 0$, 于是我们获得了一个必要条件\begin{equation}\label{equ:fpxEqu0}f’(x) = 0</div>
+        </div>
+      </a>
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020/03/04&nbsp;&nbsp;
+        
+        
+        <i class="far fa-chart-bar"></i>&nbsp;5.7k字&nbsp;&nbsp;
+        <i class="far fa-clock"></i>&nbsp;29分钟&nbsp;&nbsp;
+        
+        
+          <i class="iconfont icon-inbox"></i>
+          
+            <a href="/categories/Optimization%20Theory">Optimization Theory</a>&nbsp;
+          &nbsp;
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/Optimization%20Theory">Optimization Theory</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-12 m-auto">
+    
+      <a href="/2020/02/OptimizationTheory1/" target="_self">
+        <p class="h4 index-header">最优化问题</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">本文基本上是老师的讲义, 少部分为自己理解或修改.
+求最小 (大) 值问题\begin{equation}\label{equ:OptPro}    \min_{x \in \R^n} f(x),\quad \underset{\text{(subject to)}}{\st} x \in X.\end{equation}
+其中:
+
+$n$: 维数;
+$x$: $x = (x_1, x_2, \cdots, x_n) \in \R^n$ 为 (优化) 变量;
+$f$: $\R^n \to \R$ 单值函数, 为目标 (函数);
+$X$: $X \subset \R^n$ 为约束集 / 可行域.
+
+若 $X = \R^n$, 问题 \eqref{equ:OptPro} 变成了 $\displaystyle\min_{x \in \R^n} f(x)$ 称为无约束优化问题.
+若 $X \subsetneq \R^n$, 则称为约束优化问题.
+在很多情况下, 可以用一系列等式和不等式来约束:
+\begin{equation*}
+x \in X \Longleftrightarrow \lef</div>
+        </div>
+      </a>
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020/02/26&nbsp;&nbsp;
+        
+        
+        <i class="far fa-chart-bar"></i>&nbsp;1.8k字&nbsp;&nbsp;
+        <i class="far fa-clock"></i>&nbsp;8分钟&nbsp;&nbsp;
+        
+        
+          <i class="iconfont icon-inbox"></i>
+          
+            <a href="/categories/Optimization%20Theory">Optimization Theory</a>&nbsp;
+          &nbsp;
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/Optimization%20Theory">Optimization Theory</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-12 m-auto">
+    
+      <a href="/2020/02/FourierAnalysis1/" target="_self">
+        <p class="h4 index-header">Fourier 级数和积分</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">以下为 Fourier Analysis (Javier Duoandikoetxea) 的翻译结合老师的笔记. 本人英文渣, 所以翻译得可能不怎么样.
+Fourier 系数和级数当使用分离变量法解偏微分方程的时候会遇到将 $\R$ 上 (一个区间) 的函数表示为三角级数的问题\begin{equation}\label{equ:realFour1}f(x) = \displaystyle\sum_{k = 0}^\infty a_k \cos (kx) + b_k \sin (kx)\end{equation}
+这是 J. Fourier 在《热的解析理论》 (1822, 第一次解决问题是 1807 年在法兰西学会) 中给出了解决偏微分方程的这个方法. 更早的时候, 在 18 世纪中叶, Daniel Bernoulli 在解决振动弦的问题时曾提到这个方法, Fourier 系数的公式出现在 1777 年 L. Euler 的一篇文章中.
+\eqref{equ:realFour1} 式的右边是一个 $2\pi$-周期函数, 所以 $f$ 也是 $2\pi$-周期函数. 因此我们考虑 </div>
+        </div>
+      </a>
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020/02/22&nbsp;&nbsp;
+        
+        
+        <i class="far fa-chart-bar"></i>&nbsp;636字&nbsp;&nbsp;
+        <i class="far fa-clock"></i>&nbsp;2分钟&nbsp;&nbsp;
+        
+        
+          <i class="iconfont icon-inbox"></i>
+          
+            <a href="/categories/Fourier%20Analysis">Fourier Analysis</a>&nbsp;
+          &nbsp;
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/Fourier%20Analysis">Fourier Analysis</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </main>
+  
+<div id="sidebar" class="sidebar-hide">
+  <span class="sidebar-button sidebar-button-shift" id="toggle-sidebar" >
+    <i class="fa fa-arrow-right on" aria-hidden="true"></i>
+  </span>
+  <div class="sidebar-overlay"></div>
+  <div class="sidebar-intrude">
+    <div class="sidebar-avatar">
+      <img src="/img/icon/Icon.png" srcset="/img/icon/Icon.png" alt="avatar"/>
+    </div>
+    <div class="text-center sidebar-about">
+      <p class="h3 sidebar-author">Coumarin</p>
+      <p class="sidebar-subtitle">Coumarin</p>
+      
+        <a href="https://github.com/Quejiahao" class="h4" target="_blank">
+          <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+        &nbsp;&nbsp;
+      
+        <a href="mailto:i@kumarino.com" class="h4" target="_blank">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+        </a>
+        &nbsp;&nbsp;
+      
+    </div>
+    <div class="sidebar-friend">
+      <p class="h6 sidebar-friend-title">
+        <span class="sidebar-label-left"><i class="fas fa-user-friends"></i></span>
+        <span class="sidebar-label">友情链接</span>
+      </p>
+      <ul class="list-group">
+        
+          <a href="https://nicebowl.moe/" target="_blank">
+            <li class="list-group-item">
+              <i class="fas fa-quote-left"></i>&nbsp;
+              NiceBowl
+            </li>
+          </a>
+        
+    </ul>
+    </div>
+  </div>
+</div>
+
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <div id="footerContent"  class="rgba-black-slight">
+<footer class="pt-5">
+  <div class="text-center py-3">
+    <div class="footer-theme">
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener noreferrer">Hexo</a> theme <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener noreferrer">Fluid</a> mod by <a href="https://github.com/qixa/hexo-theme-fluid-mod" target="_blank" rel="nofollow noopener noreferrer">Julydate</a>
+    </div>
+
+    
+      <div class="footer-copyright">
+        
+          ©2020&nbsp;Coumarin
+        
+        
+          
+            <i class="iconfont icon-love"></i>
+          
+          <span>萌萌哒 <span id="runtime"></span> 天啦</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+      <!-- 一言 -->
+      <div class="footer-hitokoto">
+        <a id="hitokotoa" href="#" target="_blank" rel="nofollow noopener noreferrer">
+          <span id="hitokoto"></span>
+        </a>
+      </div>
+    
+    
+  </div>
+</footer>
+</div>
+<!-- SCRIPTS -->
+<script src="/lib/popper/popper.min.js" ></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js" ></script>
+<script src="https://cdn.staticfile.org/mdbootstrap/4.8.7/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+  <script src="/js/lazyload.js" ></script>
+
+
+<!-- Plugins -->
+
+  <script src="/lib/prettify/prettify.min.js" ></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+  <script src="https://cdn.staticfile.org/typed.js/2.0.9/typed.min.js" ></script>
+  <script type="text/javascript">
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "Coumarin&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+  <script src="https://cdn.staticfile.org/anchor-js/4.2.0/anchor.min.js" ></script>
+  <script type="text/javascript">
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+  <script src="/js/local-search.js" ></script>
+  <script type="text/javascript">
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.10/SmoothScroll.min.js" ></script>
+  <style type="text/css">
+    html, body{
+      scroll-behavior: smooth;
+    }
+    @media screen and (prefers-reduced-motion: reduce){
+      html, body{
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+
+
+
+  <!-- 随机背景 -->
+  <script src="https://cdn.staticfile.org/danielgindi-jquery-backstretch/2.1.15/jquery.backstretch.min.js" ></script>
+  
+  
+    <!-- 本地随机背景 -->
+    <script type="text/javascript">
+      !function(){
+        var random_bg_string = "https://img.xjh.me/desktop/bg/acg/64082849_p0.jpg,https://img.xjh.me/desktop/bg/acg/63946708_p0.jpg,https://img.xjh.me/desktop/bg/acg/59756207_p0.jpg,https://img.xjh.me/desktop/bg/acg/63374320_p0.jpg,https://img.xjh.me/desktop/bg/nature/59190594_p0.jpg,https://img.xjh.me/desktop/bg/acg/63093148_p0.jpg,https://img.xjh.me/desktop/bg/acg/62494753_p0.jpg,https://img.xjh.me/desktop/bg/acg/61749296_p0.jpg,";
+        /* 去除图片链接组末尾逗号并转换为数组 */
+        random_bg_string = random_bg_string.substring(0,random_bg_string.length-1);
+        var random_bg_array = random_bg_string.split(",");
+        /* 首张图片随机 */
+        var n = Math.floor(Math.random() * random_bg_array.length);
+        $(".banner-bg").backstretch(
+          random_bg_array,
+          {
+            duration: 20 * 1000,
+            fade: 2 * 1000,
+            start: n,
+            animateFirst: false
+          }
+        );
+      }();
+    </script>
+  
+
+
+  <script type="text/javascript">
+  /*一言API*/
+  $(document).ready(function(){
+    getHitokoto();
+  });
+  function hitokoto(e) {
+    $("#hitokoto").stop().fadeOut(function() {
+      $("#hitokoto").html(e.hitokoto);
+      var element = document.getElementById('hitokotoa');
+      element.href = "https://hitokoto.cn/?uuid=" + e.uuid;
+      $("#hitokoto").stop().fadeIn()
+    })
+  };
+  function getHitokoto() {
+    var e = ["a", "b", "c", "d", "e", "i"];
+    fetch('https://v1.hitokoto.cn/?encode=json&charset=utf-8&c=' + e[Math.floor(Math.random() * e.length)],{
+      cache: 'no-cache',
+      method: 'GET',
+      mode: 'cors'
+    }).then(
+      response => response.json()
+    ).then(
+      data => {
+        hitokoto(data)
+        setTimeout(getHitokoto, 1e4)
+      }
+    ).catch(
+      console.error
+    )
+  };
+  </script>
+
+
+  <script async src="//cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" ></script>
+  
+
+
+  
+  
+    <script type="text/javascript">
+      //定义获取词语下标
+      var a_idx = 0;
+      jQuery(document).ready(function ($) {
+        //点击body时触发事件
+        $("body").click(function (e) {
+          //需要显示的词语
+          var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+          //设置词语给span标签
+          var $i = $("<span/>").text(a[a_idx]);
+          //下标等于原来下标+1  余 词语总数
+          a_idx = (a_idx + 1) % a.length;
+          //获取鼠标指针的位置，分别相对于文档的左和右边缘。
+          //获取x和y的指针坐标
+          var x = e.pageX, y = e.pageY;
+          //在鼠标的指针的位置给$i定义的span标签添加css样式
+          $i.css({
+            "z-index": 999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": rand_color()
+          });
+          // 随机颜色
+          function rand_color() {
+            return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+          }
+          //在body添加这个标签
+          $("body").append($i);
+          //animate() 方法执行 CSS 属性集的自定义动画。
+          //该方法通过CSS样式将元素从一个状态改变为另一个状态。CSS属性值是逐渐改变的，这样就可以创建动画效果。
+          //详情请看http://www.w3school.com.cn/jquery/effect_animate.asp
+          $i.animate({
+            //将原来的位置向上移动180
+            "top": y - 180,
+            "opacity": 0
+            //1500动画的速度
+          }, 1500, function () {
+            //时间到了自动删除
+            $i.remove();
+          });
+        });
+      })
+      ;
+    </script>
+  
+
+
+<!-- Functions -->
+<script type="text/javascript">
+  /* 切换背景 */
+  
+  $("#background").removeClass("banner-bg");
+  $("body").addClass("banner-bg");
+  var postToTopHight = $("#board").offset().top;
+  $(window).scroll(function () {
+    var bgDisplay = false;
+    var scrollHeight = document.body.scrollTop + document.documentElement.scrollTop;
+    bgDisplay = scrollHeight >= postToTopHight;
+    if(bgDisplay) {
+      $('#background').removeClass("rgba-black-slight");
+      $('#mainContent').removeClass("rgba-black-slight");
+      $('#footerContent').removeClass("rgba-black-slight");
+    } else {
+      $('#background').addClass("rgba-black-slight");
+      $('#mainContent').addClass("rgba-black-slight");
+      $('#footerContent').addClass("rgba-black-slight");
+    }
+  });
+  
+</script>
+
+  <script type="text/javascript">
+    /*显示博客运行时间*/
+    var blogRunTime = function () {
+      var runTime = document.getElementById("runtime");
+      var runtimeDate = "2020,02,20";
+	    var createDate = new Date(runtimeDate);
+	    var nowDate = new Date();
+	    var dateLine = nowDate.getTime() - createDate.getTime();
+	    var runDate = Math.floor(dateLine / (1000 * 60 * 60 * 24));
+	    runTime.innerHTML = runDate;
+    };
+    $(document).ready(function(){
+	    blogRunTime();
+    });
+  </script>
+
+
+  <script type="text/javascript">
+    /*窗口监视*/
+    var originalTitle = document.title;
+    window.onblur = function(){document.title = "你不爱我了 QAQ"};
+    window.onfocus = function(){document.title = originalTitle};
+  </script>
+
+
+  <script type="text/javascript">
+    /* 雪花效果 */
+    console.log('雪花效果 code by kvv.me');
+    ~function () {
+      function t() {
+          e.width = window.innerWidth,
+          e.height = window.innerHeight,
+          o = Math.round(window.innerWidth * window.innerHeight / 1e4)
+      }
+      function n() {
+          var t = window.innerWidth
+            , d = window.innerHeight
+            , c = e.getContext("2d");
+          c.clearRect(0, 0, t, d),
+          c.fillStyle = "rgba(255, 255, 255, 0.7)",
+          c.beginPath(),
+          a += .01;
+          for (var u = 0; o > u; u++) {
+            var l = r[u];
+            if (!l) {
+              continue
+            }
+            ;c.moveTo(l.x, l.y),
+            c.arc(l.x, l.y, l.radius, 0, 2 * Math.PI, !0),
+            l.y += Math.cos(a) + l.radius / 2,
+            l.x += Math.sin(a * l.direction),
+            (l.x > t + 5 || -5 > l.x || l.y > d) && (u % 3 > 0 ? (r[u].x = Math.random() * t,
+            r[u].y = -10) : Math.sin(a * l.direction) > 0 ? (r[u].x = -5,
+            r[u].y = Math.random() * d) : (r[u].x = t + 5,
+            r[u].y = Math.random() * d))
+          }
+          c.fill(),
+          i(n)
+      }
+      var e = document.createElement("canvas")
+        , i = requestAnimationFrame || msRequestAnimationFrame || function(t) {
+          setTimeout(t, 16)
+        }
+      , a = 0
+      , o = 0
+      , r = [];
+      t(),
+      e.className = "snow",
+      document.body.appendChild(e);
+      for (var d = 0; o > d; d++)
+        r.push({
+            x: Math.random() * window.innerWidth,
+            y: Math.random() * window.innerHeight,
+            radius: 4 * Math.random() + 1,
+            direction: 2 * Math.random() - .5
+        });
+      addEventListener("resize", t),
+      i(n)
+    }();
+  </script>
+
+
+ 
+ 
+
+<!-- 腾讯统计 -->
+<script>
+  var _mtac = {};
+  (function() {
+    var mta = document.createElement("script");
+    mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+    mta.setAttribute("name", "MTAH5");
+    mta.setAttribute("sid", "500711567");
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(mta, s);
+  })();
+</script>
+ 
+ 
+ 
+ 
+
+  
+    <script type="text/javascript">
+      /* 页面 banner 覆盖全屏 */
+      $(".scroll-down-bar .scroll-down-arrow").css({"margin-top":"3rem"});
+      $("#board").css({"margin-top":"0"});
+    </script>
+  
+</body>
+</html>
